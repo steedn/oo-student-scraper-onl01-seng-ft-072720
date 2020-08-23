@@ -23,7 +23,7 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     profile_data = doc.css(".main-wrapper")
     profile_hash = {}
-    
+
     profile_data.each do |d|
       profile_hash[:profile_quote] = d.css(".profile-quote").text
       profile_hash[:bio] = d.css(".description-holder p").text
